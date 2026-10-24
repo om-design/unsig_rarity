@@ -8,6 +8,34 @@
   const counts = new Map();
   const integer = n => n.toLocaleString('en-US');
   const code = n => String(n).padStart(5,'0');
+  const numberInput = $('unsig-number');
+  let acceptedInput = numberInput.value;
+  const editableID = value => /^\d{0,5}$/.test(value) && (value === '' || Number(value) <= 31118);
+  function rejectInput() {
+    $('search-message').classList.add('error');
+    $('search-message').textContent='Use digits only, from 00000 to 31118. Your entry was kept.';
+  }
+  numberInput.addEventListener('beforeinput', event => {
+    if(event.data == null || event.inputType.startsWith('delete')) return;
+    const next = numberInput.value.slice(0,numberInput.selectionStart) + event.data + numberInput.value.slice(numberInput.selectionEnd);
+    if(!editableID(next)) { event.preventDefault(); rejectInput(); }
+  });
+  numberInput.addEventListener('paste', event => {
+    const text = event.clipboardData.getData('text');
+    const next = numberInput.value.slice(0,numberInput.selectionStart) + text + numberInput.value.slice(numberInput.selectionEnd);
+    if(!editableID(next)) { event.preventDefault(); rejectInput(); }
+  });
+  numberInput.addEventListener('input', () => {
+    if(!editableID(numberInput.value)) {
+      numberInput.value=acceptedInput;
+      rejectInput();
+      return;
+    }
+    acceptedInput=numberInput.value;
+    numberInput.removeAttribute('aria-invalid');
+    $('search-message').classList.remove('error');
+    $('search-message').textContent=current ? `Showing unsig #${code(current[0])}. Search to apply your entry.` : 'Enter an unsig number.';
+  });
 
   function rarity(n) {
     // Integer arithmetic rounds 100*(1-n/N) to four decimal places.
@@ -76,6 +104,7 @@
     $('result').hidden=false;
     $('result-id').textContent='#'+code(id);
     $('unsig-number').value=code(id);
+    acceptedInput=numberInput.value;
     $('original-link').href='https://www.unsigs.com/nft/'+code(id);
     $('object-geometry').textContent=current[1];
     const zero=id===0;
@@ -110,7 +139,7 @@
   }
 
   function parseID(value) {
-    const clean=value.trim().replace(/^unsig\s*#?\s*/i,'').replace(/^#\s*/,'');
+    const clean=value;
     if(!/^\d{1,5}$/.test(clean))return null;
     const n=Number(clean);return Number.isInteger(n)&&n>=0&&n<collection.records.length?n:null;
   }

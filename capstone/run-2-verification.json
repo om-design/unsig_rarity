@@ -1,0 +1,155 @@
+{
+  "eligible_records": 31118,
+  "independent_checks": 311180,
+  "all_pass": true,
+  "groups": {
+    "props": 6,
+    "ordered_values": 8198,
+    "ordered_colors": 186,
+    "full_configuration": 31118
+  },
+  "wallet_fixture_count": 113,
+  "wallet_response_complete": true,
+  "zero_excluded": true,
+  "examples": [
+    {
+      "id": 1,
+      "metrics": [
+        {
+          "n": 15,
+          "d": 31118,
+          "share": 0.0482,
+          "rarity": 99.9518
+        },
+        {
+          "n": 3,
+          "d": 15,
+          "share": 20,
+          "rarity": 80
+        },
+        {
+          "n": 5,
+          "d": 15,
+          "share": 33.3333,
+          "rarity": 66.6667
+        }
+      ],
+      "counts": [
+        15,
+        3,
+        3,
+        5,
+        5,
+        1,
+        1
+      ]
+    },
+    {
+      "id": 52,
+      "metrics": [
+        {
+          "n": 246,
+          "d": 31118,
+          "share": 0.7905,
+          "rarity": 99.2095
+        },
+        {
+          "n": 3,
+          "d": 246,
+          "share": 1.2195,
+          "rarity": 98.7805
+        },
+        {
+          "n": 49,
+          "d": 246,
+          "share": 19.9187,
+          "rarity": 80.0813
+        }
+      ],
+      "counts": [
+        246,
+        3,
+        3,
+        49,
+        49,
+        1,
+        1
+      ]
+    },
+    {
+      "id": 26779,
+      "metrics": [
+        {
+          "n": 4565,
+          "d": 31118,
+          "share": 14.67,
+          "rarity": 85.33
+        },
+        {
+          "n": 1,
+          "d": 4565,
+          "share": 0.0219,
+          "rarity": 99.9781
+        },
+        {
+          "n": 108,
+          "d": 4565,
+          "share": 2.3658,
+          "rarity": 97.6342
+        }
+      ],
+      "counts": [
+        4565,
+        1,
+        1,
+        108,
+        108,
+        1,
+        1
+      ]
+    },
+    {
+      "id": 31118,
+      "metrics": [
+        {
+          "n": 4565,
+          "d": 31118,
+          "share": 14.67,
+          "rarity": 85.33
+        },
+        {
+          "n": 1,
+          "d": 4565,
+          "share": 0.0219,
+          "rarity": 99.9781
+        },
+        {
+          "n": 635,
+          "d": 4565,
+          "share": 13.9102,
+          "rarity": 86.0898
+        }
+      ],
+      "counts": [
+        4565,
+        1,
+        1,
+        635,
+        635,
+        1,
+        1
+      ]
+    }
+  ],
+  "browser_scoring_checks": 110,
+  "browser_scoring_passed": 110,
+  "wallet_browser_checks": 7,
+  "csv_data_rows": 31118,
+  "layout_widths": [
+    1440,
+    375,
+    320
+  ],
+  "checkbox_gap_px": 18,
+  "published": false
+}

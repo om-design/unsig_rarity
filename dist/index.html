@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#061426">
+  <meta name="description" content="Explore unsigned_algorithms through geometry, property count, and published color-cluster rarity. Select the facets that shape your combination.">
+  <title>unsigned_algorithms — Rarity Observatory</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#lookup">Skip to unsig search</a>
+  <header class="site-header shell">
+    <a class="brand" href="#top" aria-label="unsigned algorithms home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>unsigned_<br>algorithms</span></a>
+    <nav aria-label="Main navigation"><a href="#lookup" aria-current="page">Explore</a><a href="#method">The method <span aria-hidden="true">↗</span></a></nav>
+    <div class="header-note"><span class="status-dot" aria-hidden="true"></span> A study of rarity</div>
+  </header>
+
+  <main id="top" class="shell">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy"><p class="eyebrow">THE RARITY OBSERVATORY <span>/ 01</span></p><h1 id="page-title">Rarity, <em>in layers.</em></h1><p class="lead">One algorithm. Thousands of expressions.<br>Discover what makes your unsig uncommon.</p></div>
+      <form id="lookup" class="lookup" novalidate>
+        <label for="unsig-number">UNSIG NUMBER</label>
+        <div class="search-control"><span class="hash" aria-hidden="true">#</span><input id="unsig-number" name="unsig" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" value="00052" aria-describedby="search-hint search-message" placeholder="00000–31118"><button type="submit" id="search-button" disabled>Search <span aria-hidden="true">↗</span></button></div>
+        <div class="search-meta"><span id="search-hint">Enter an ID from 00000 to 31118</span><button type="button" id="random-button" disabled>Surprise me <span aria-hidden="true">⤨</span></button></div>
+        <p id="search-message" class="search-message" role="status" aria-live="polite">Loading the collection…</p>
+      </form>
+    </section>
+
+    <section id="result" class="explorer" aria-labelledby="result-title" hidden>
+      <div class="result-heading"><div class="result-name"><p class="eyebrow">OBJECT IN FOCUS</p><h2 id="result-title">unsig<span id="result-id">#00052</span></h2></div><div class="collection-note"><span>31,118</span> eligible expressions <span class="note-divider">/</span> <span>3</span> rarity facets</div></div>
+      <div class="analysis-grid">
+        <aside class="art-area" aria-label="Unsig preview and details">
+          <div class="art-frame"><canvas id="artwork" width="512" height="512" role="img" aria-label="Parameter-rendered unsig preview"></canvas><div class="art-corner" aria-hidden="true">u_</div><div id="genesis-art-label" hidden>00000<br><span>THE ORIGIN</span></div></div>
+          <div class="art-caption"><span>PARAMETER-RENDERED PREVIEW</span><a id="original-link" href="https://www.unsigs.com/nft/00052" target="_blank" rel="noopener noreferrer">View original <span aria-hidden="true">↗</span></a></div>
+          <p class="art-note">A local reconstruction from the recorded properties. Preview differences do not affect rarity.</p>
+          <div class="object-details"><div><span>COLLECTION</span><strong>unsigned_algorithms</strong></div><div><span>CHAIN</span><strong>Cardano</strong></div><div><span>GEOMETRY CODE</span><strong id="object-geometry">—</strong></div></div>
+          <p id="provenance-note" class="provenance-note" hidden></p>
+        </aside>
+
+        <div class="rarity-area">
+          <div class="facet-intro"><span>THE FACETS</span><p>Select the layers that define your combination.</p></div>
+          <div id="facet-grid" class="facet-grid">
+            <div class="facet-column" data-facet="geometry"><article class="facet-card geometry"><div class="facet-top"><span>01</span><span class="facet-symbol" aria-hidden="true">◇</span></div><h3>Geometry</h3><p class="facet-definition">The arrangement, by code.</p><div class="facet-value" id="geometry-value">—</div><p class="facet-value-caption">GEOMETRY CODE</p><div class="facet-population"><strong id="geometry-count">—</strong><span>unsigs share this geometry</span></div><div class="facet-score"><span>RARITY</span><strong id="geometry-score">—</strong></div></article><label class="facet-selector"><input type="checkbox" id="select-geometry" data-select="geometry" checked><span>Select geometry</span></label></div>
+            <div class="facet-column" data-facet="properties"><article class="facet-card properties"><div class="facet-top"><span>02</span><span class="facet-symbol" aria-hidden="true">≋</span></div><h3>Properties</h3><p class="facet-definition">The number of building blocks.</p><div class="facet-value" id="properties-value">—</div><p class="facet-value-caption">PROPERTIES</p><div class="facet-population"><strong id="properties-count">—</strong><span>unsigs share this count</span></div><div class="facet-score"><span>RARITY</span><strong id="properties-score">—</strong></div></article><label class="facet-selector"><input type="checkbox" id="select-properties" data-select="properties" checked><span>Select properties</span></label></div>
+            <div class="facet-column" data-facet="color"><article class="facet-card color"><div class="facet-top"><span>03</span><span class="facet-symbol" aria-hidden="true">◒</span></div><h3>Color cluster</h3><p class="facet-definition">The published palette grouping.</p><div class="facet-value" id="color-value">—</div><p class="facet-value-caption">COLOR CLUSTER</p><div class="facet-population"><strong id="color-count">—</strong><span>unsigs share this cluster</span></div><div class="facet-score"><span>RARITY</span><strong id="color-score">—</strong></div></article><label class="facet-selector"><input type="checkbox" id="select-color" data-select="color" checked><span>Select color cluster</span></label></div>
+          </div>
+          <div id="total-block" class="total-block" role="status" aria-live="polite" aria-atomic="true"><div class="total-label"><h3>Total rarity</h3><span id="selection-summary">3 FACETS SELECTED</span></div><p class="total-percentage" id="total-score">—</p><p id="total-count" class="total-count">—</p><p id="total-explanation" class="total-explanation">The percentage of the eligible collection that does not share this combination.</p></div>
+          <section id="genesis-panel" class="genesis-panel" hidden><p class="eyebrow">A CATEGORY OF ITS OWN</p><h3>The origin. Outside rarity.</h3><p>unsig #00000 has no properties and is the collection's special algorithm-bearing outlier. It is excluded from all rarity calculations.</p><p>Explore any ID from 00001 to 31118 to compare rarity facets.</p></section>
+        </div>
+      </div>
+    </section>
+
+    <section id="method" class="method-section" aria-labelledby="method-title"><div><p class="eyebrow">UNDER THE SURFACE</p><h2 id="method-title">Count the uncommon.</h2></div><div class="method-copy"><p>Rarity starts with a simple idea: <strong>the fewer members a group has, the rarer it is.</strong> Each facet shows how many eligible unsigs share that characteristic.</p><p>Check more than one facet and Total rarity measures the actual combination. It counts the unsigs matching <em>all</em> your selections, then displays the percentage of the collection that does not match.</p><div class="formula"><span>RARITY %</span><code>100 × (1 − matches / 31,118)</code></div><p class="method-small">For example, 3 matches gives 99.9904%. This is inverse frequency, not a percentile rank. Ties are expected. No single “most rare” item is required.</p><details><summary>Data, geometry decisions &amp; preview notes <span aria-hidden="true">+</span></summary><div class="details-body"><p>Geometry code is the primary classification. Named forms are not used in scoring. All 84 members of 3F-075 stay in one group, even when their detailed boundary patterns differ.</p><p>Five project assignments differ from the published reference: #19656, #19686 and #21565 use 3F-108; #29883 and #30287 use 3F-094. These decisions are supported by original-page review and structural comparison. Reference codes are preserved and shown on affected results; these are project decisions, not official taxonomy revisions.</p><p>Color clusters use <a href="https://unsig.info/color-clusters/" target="_blank" rel="noopener noreferrer">published unsig.info memberships ↗</a>. Geometry definitions and memberships were checked against <a href="https://unsig.info/geometries/" target="_blank" rel="noopener noreferrer">unsig.info's geometry catalog ↗</a>. Rarity is calculated from this site's reviewed snapshot, not marketplace prices or generation probabilities.</p><p>Previews adapt the <a href="https://github.com/alexanderwatanabe/unsigned_algorithms" target="_blank" rel="noopener noreferrer">creator's rendering notebook ↗</a>, with explicit modular arithmetic. They are parameter reconstructions, not certified archival image copies. See <a href="LICENSE-RENDERER.txt">renderer license</a>.</p><p>Dataset snapshot: October 23, 2026 · 31,118 eligible items · 172 geometry codes · 132 color clusters. #00000 is excluded throughout.</p></div></details></div></section>
+  </main>
+  <footer class="site-footer shell"><a class="footer-brand" href="#top">unsigned_<span>algorithms</span></a><p>An independent rarity study. Not affiliated with the creator or unsig.info.</p><span>CAPSTONE · RUN 01</span></footer>
+</body>
+</html>

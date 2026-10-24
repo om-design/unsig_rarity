@@ -1,0 +1,98 @@
+[
+  {
+    "check": "empty_selection",
+    "pass": true
+  },
+  {
+    "check": "invalid_input",
+    "input": "",
+    "invalid": "true",
+    "message": "Enter an unsig number to search.",
+    "pass": true
+  },
+  {
+    "check": "invalid_input",
+    "input": "-1",
+    "invalid": "true",
+    "message": "Use a whole unsig number from 00000 to 31118.",
+    "pass": true
+  },
+  {
+    "check": "invalid_input",
+    "input": "31119",
+    "invalid": "true",
+    "message": "Use a whole unsig number from 00000 to 31118.",
+    "pass": true
+  },
+  {
+    "check": "invalid_input",
+    "input": "abc",
+    "invalid": "true",
+    "message": "Use a whole unsig number from 00000 to 31118.",
+    "pass": true
+  },
+  {
+    "check": "invalid_input",
+    "input": "1.5",
+    "invalid": "true",
+    "message": "Use a whole unsig number from 00000 to 31118.",
+    "pass": true
+  },
+  {
+    "check": "invalid_input",
+    "input": "999999",
+    "invalid": "true",
+    "message": "Use a whole unsig number from 00000 to 31118.",
+    "pass": true
+  },
+  {
+    "check": "zero_and_keyboard_submit",
+    "artLabel": "unsig #00000: the special zero-property origin, excluded from rarity",
+    "facetsHidden": true,
+    "genesisShown": true,
+    "id": "#00000",
+    "totalHidden": true,
+    "pass": true
+  },
+  {
+    "check": "prefix_and_keyboard_checkbox",
+    "checked": false,
+    "id": "#26779",
+    "invalid": null,
+    "pass": true
+  },
+  {
+    "check": "mobile_layout_375",
+    "checkboxes": [
+      {
+        "centerOffset": 0,
+        "facet": "geometry",
+        "gap": 18
+      },
+      {
+        "centerOffset": -0.00390625,
+        "facet": "properties",
+        "gap": 18
+      },
+      {
+        "centerOffset": -0.00390625,
+        "facet": "color",
+        "gap": 18
+      }
+    ],
+    "overflow": false,
+    "width": 375,
+    "pass": true
+  },
+  {
+    "check": "narrow_layout_320",
+    "overflow": false,
+    "width": 320,
+    "pass": true
+  },
+  {
+    "check": "random_nonzero_search",
+    "id": 8257,
+    "pass": true
+  }
+]

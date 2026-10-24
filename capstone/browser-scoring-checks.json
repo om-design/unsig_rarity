@@ -1,0 +1,682 @@
+[
+  {
+    "id": 1,
+    "selected": [
+      "geometry"
+    ],
+    "matches": 311,
+    "score": "99.0006%",
+    "pass": true
+  },
+  {
+    "id": 1,
+    "selected": [
+      "property_count"
+    ],
+    "matches": 15,
+    "score": "99.9518%",
+    "pass": true
+  },
+  {
+    "id": 1,
+    "selected": [
+      "geometry",
+      "property_count"
+    ],
+    "matches": 9,
+    "score": "99.9711%",
+    "pass": true
+  },
+  {
+    "id": 1,
+    "selected": [
+      "color_cluster"
+    ],
+    "matches": 88,
+    "score": "99.7172%",
+    "pass": true
+  },
+  {
+    "id": 1,
+    "selected": [
+      "geometry",
+      "color_cluster"
+    ],
+    "matches": 19,
+    "score": "99.9389%",
+    "pass": true
+  },
+  {
+    "id": 1,
+    "selected": [
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 2,
+    "score": "99.9936%",
+    "pass": true
+  },
+  {
+    "id": 1,
+    "selected": [
+      "geometry",
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 2,
+    "score": "99.9936%",
+    "pass": true
+  },
+  {
+    "id": 8332,
+    "selected": [
+      "geometry"
+    ],
+    "matches": 558,
+    "score": "98.2068%",
+    "pass": true
+  },
+  {
+    "id": 8332,
+    "selected": [
+      "property_count"
+    ],
+    "matches": 9553,
+    "score": "69.3007%",
+    "pass": true
+  },
+  {
+    "id": 8332,
+    "selected": [
+      "geometry",
+      "property_count"
+    ],
+    "matches": 36,
+    "score": "99.8843%",
+    "pass": true
+  },
+  {
+    "id": 8332,
+    "selected": [
+      "color_cluster"
+    ],
+    "matches": 304,
+    "score": "99.0231%",
+    "pass": true
+  },
+  {
+    "id": 8332,
+    "selected": [
+      "geometry",
+      "color_cluster"
+    ],
+    "matches": 12,
+    "score": "99.9614%",
+    "pass": true
+  },
+  {
+    "id": 8332,
+    "selected": [
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 158,
+    "score": "99.4923%",
+    "pass": true
+  },
+  {
+    "id": 8332,
+    "selected": [
+      "geometry",
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 12,
+    "score": "99.9614%",
+    "pass": true
+  },
+  {
+    "id": 26779,
+    "selected": [
+      "geometry"
+    ],
+    "matches": 84,
+    "score": "99.7301%",
+    "pass": true
+  },
+  {
+    "id": 26779,
+    "selected": [
+      "property_count"
+    ],
+    "matches": 4565,
+    "score": "85.3300%",
+    "pass": true
+  },
+  {
+    "id": 26779,
+    "selected": [
+      "geometry",
+      "property_count"
+    ],
+    "matches": 84,
+    "score": "99.7301%",
+    "pass": true
+  },
+  {
+    "id": 26779,
+    "selected": [
+      "color_cluster"
+    ],
+    "matches": 388,
+    "score": "98.7531%",
+    "pass": true
+  },
+  {
+    "id": 26779,
+    "selected": [
+      "geometry",
+      "color_cluster"
+    ],
+    "matches": 2,
+    "score": "99.9936%",
+    "pass": true
+  },
+  {
+    "id": 26779,
+    "selected": [
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 32,
+    "score": "99.8972%",
+    "pass": true
+  },
+  {
+    "id": 26779,
+    "selected": [
+      "geometry",
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 2,
+    "score": "99.9936%",
+    "pass": true
+  },
+  {
+    "id": 27904,
+    "selected": [
+      "geometry"
+    ],
+    "matches": 84,
+    "score": "99.7301%",
+    "pass": true
+  },
+  {
+    "id": 27904,
+    "selected": [
+      "property_count"
+    ],
+    "matches": 4565,
+    "score": "85.3300%",
+    "pass": true
+  },
+  {
+    "id": 27904,
+    "selected": [
+      "geometry",
+      "property_count"
+    ],
+    "matches": 84,
+    "score": "99.7301%",
+    "pass": true
+  },
+  {
+    "id": 27904,
+    "selected": [
+      "color_cluster"
+    ],
+    "matches": 245,
+    "score": "99.2127%",
+    "pass": true
+  },
+  {
+    "id": 27904,
+    "selected": [
+      "geometry",
+      "color_cluster"
+    ],
+    "matches": 4,
+    "score": "99.9871%",
+    "pass": true
+  },
+  {
+    "id": 27904,
+    "selected": [
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 100,
+    "score": "99.6786%",
+    "pass": true
+  },
+  {
+    "id": 27904,
+    "selected": [
+      "geometry",
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 4,
+    "score": "99.9871%",
+    "pass": true
+  },
+  {
+    "id": 19656,
+    "selected": [
+      "geometry"
+    ],
+    "matches": 78,
+    "score": "99.7493%",
+    "pass": true
+  },
+  {
+    "id": 19656,
+    "selected": [
+      "property_count"
+    ],
+    "matches": 14575,
+    "score": "53.1622%",
+    "pass": true
+  },
+  {
+    "id": 19656,
+    "selected": [
+      "geometry",
+      "property_count"
+    ],
+    "matches": 78,
+    "score": "99.7493%",
+    "pass": true
+  },
+  {
+    "id": 19656,
+    "selected": [
+      "color_cluster"
+    ],
+    "matches": 245,
+    "score": "99.2127%",
+    "pass": true
+  },
+  {
+    "id": 19656,
+    "selected": [
+      "geometry",
+      "color_cluster"
+    ],
+    "matches": 4,
+    "score": "99.9871%",
+    "pass": true
+  },
+  {
+    "id": 19656,
+    "selected": [
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 133,
+    "score": "99.5726%",
+    "pass": true
+  },
+  {
+    "id": 19656,
+    "selected": [
+      "geometry",
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 4,
+    "score": "99.9871%",
+    "pass": true
+  },
+  {
+    "id": 19686,
+    "selected": [
+      "geometry"
+    ],
+    "matches": 78,
+    "score": "99.7493%",
+    "pass": true
+  },
+  {
+    "id": 19686,
+    "selected": [
+      "property_count"
+    ],
+    "matches": 14575,
+    "score": "53.1622%",
+    "pass": true
+  },
+  {
+    "id": 19686,
+    "selected": [
+      "geometry",
+      "property_count"
+    ],
+    "matches": 78,
+    "score": "99.7493%",
+    "pass": true
+  },
+  {
+    "id": 19686,
+    "selected": [
+      "color_cluster"
+    ],
+    "matches": 274,
+    "score": "99.1195%",
+    "pass": true
+  },
+  {
+    "id": 19686,
+    "selected": [
+      "geometry",
+      "color_cluster"
+    ],
+    "matches": 6,
+    "score": "99.9807%",
+    "pass": true
+  },
+  {
+    "id": 19686,
+    "selected": [
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 157,
+    "score": "99.4955%",
+    "pass": true
+  },
+  {
+    "id": 19686,
+    "selected": [
+      "geometry",
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 6,
+    "score": "99.9807%",
+    "pass": true
+  },
+  {
+    "id": 21565,
+    "selected": [
+      "geometry"
+    ],
+    "matches": 78,
+    "score": "99.7493%",
+    "pass": true
+  },
+  {
+    "id": 21565,
+    "selected": [
+      "property_count"
+    ],
+    "matches": 14575,
+    "score": "53.1622%",
+    "pass": true
+  },
+  {
+    "id": 21565,
+    "selected": [
+      "geometry",
+      "property_count"
+    ],
+    "matches": 78,
+    "score": "99.7493%",
+    "pass": true
+  },
+  {
+    "id": 21565,
+    "selected": [
+      "color_cluster"
+    ],
+    "matches": 245,
+    "score": "99.2127%",
+    "pass": true
+  },
+  {
+    "id": 21565,
+    "selected": [
+      "geometry",
+      "color_cluster"
+    ],
+    "matches": 4,
+    "score": "99.9871%",
+    "pass": true
+  },
+  {
+    "id": 21565,
+    "selected": [
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 133,
+    "score": "99.5726%",
+    "pass": true
+  },
+  {
+    "id": 21565,
+    "selected": [
+      "geometry",
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 4,
+    "score": "99.9871%",
+    "pass": true
+  },
+  {
+    "id": 29883,
+    "selected": [
+      "geometry"
+    ],
+    "matches": 120,
+    "score": "99.6144%",
+    "pass": true
+  },
+  {
+    "id": 29883,
+    "selected": [
+      "property_count"
+    ],
+    "matches": 4565,
+    "score": "85.3300%",
+    "pass": true
+  },
+  {
+    "id": 29883,
+    "selected": [
+      "geometry",
+      "property_count"
+    ],
+    "matches": 120,
+    "score": "99.6144%",
+    "pass": true
+  },
+  {
+    "id": 29883,
+    "selected": [
+      "color_cluster"
+    ],
+    "matches": 319,
+    "score": "98.9749%",
+    "pass": true
+  },
+  {
+    "id": 29883,
+    "selected": [
+      "geometry",
+      "color_cluster"
+    ],
+    "matches": 12,
+    "score": "99.9614%",
+    "pass": true
+  },
+  {
+    "id": 29883,
+    "selected": [
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 125,
+    "score": "99.5983%",
+    "pass": true
+  },
+  {
+    "id": 29883,
+    "selected": [
+      "geometry",
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 12,
+    "score": "99.9614%",
+    "pass": true
+  },
+  {
+    "id": 30287,
+    "selected": [
+      "geometry"
+    ],
+    "matches": 120,
+    "score": "99.6144%",
+    "pass": true
+  },
+  {
+    "id": 30287,
+    "selected": [
+      "property_count"
+    ],
+    "matches": 4565,
+    "score": "85.3300%",
+    "pass": true
+  },
+  {
+    "id": 30287,
+    "selected": [
+      "geometry",
+      "property_count"
+    ],
+    "matches": 120,
+    "score": "99.6144%",
+    "pass": true
+  },
+  {
+    "id": 30287,
+    "selected": [
+      "color_cluster"
+    ],
+    "matches": 550,
+    "score": "98.2325%",
+    "pass": true
+  },
+  {
+    "id": 30287,
+    "selected": [
+      "geometry",
+      "color_cluster"
+    ],
+    "matches": 12,
+    "score": "99.9614%",
+    "pass": true
+  },
+  {
+    "id": 30287,
+    "selected": [
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 167,
+    "score": "99.4633%",
+    "pass": true
+  },
+  {
+    "id": 30287,
+    "selected": [
+      "geometry",
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 12,
+    "score": "99.9614%",
+    "pass": true
+  },
+  {
+    "id": 52,
+    "selected": [
+      "geometry"
+    ],
+    "matches": 311,
+    "score": "99.0006%",
+    "pass": true
+  },
+  {
+    "id": 52,
+    "selected": [
+      "property_count"
+    ],
+    "matches": 246,
+    "score": "99.2095%",
+    "pass": true
+  },
+  {
+    "id": 52,
+    "selected": [
+      "geometry",
+      "property_count"
+    ],
+    "matches": 84,
+    "score": "99.7301%",
+    "pass": true
+  },
+  {
+    "id": 52,
+    "selected": [
+      "color_cluster"
+    ],
+    "matches": 80,
+    "score": "99.7429%",
+    "pass": true
+  },
+  {
+    "id": 52,
+    "selected": [
+      "geometry",
+      "color_cluster"
+    ],
+    "matches": 3,
+    "score": "99.9904%",
+    "pass": true
+  },
+  {
+    "id": 52,
+    "selected": [
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 5,
+    "score": "99.9839%",
+    "pass": true
+  },
+  {
+    "id": 52,
+    "selected": [
+      "geometry",
+      "property_count",
+      "color_cluster"
+    ],
+    "matches": 3,
+    "score": "99.9904%",
+    "pass": true
+  }
+]

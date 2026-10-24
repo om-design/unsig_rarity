@@ -15,8 +15,10 @@
     function metric(id,basis){if(id===0)return null;const n=count(id,[basis]),d=basis==='props'?N:count(id,['props']);return {n,d,share:percent(n,d),rarity:percent(d-n,d)};}
     function ranked(basis,filter=0,ids=null){
       const rankedRows=rows.filter(r=>(!filter||r[2]===filter)&&(!ids||ids.has(r[0]))).map(r=>({row:r,...metric(r[0],basis)}));
-      rankedRows.sort((a,b)=>a.n*b.d-b.n*a.d||a.row[0]-b.row[0]);
-      let previous=null,rank=0;for(let i=0;i<rankedRows.length;i++){const r=rankedRows[i];if(!previous||r.n*previous.d!==previous.n*r.d)rank=i+1;r.rank=rank;previous=r;}return rankedRows;
+      // Property-count scarcity is an absolute priority, not a weighted score.
+      const compare=(a,b)=>count(a.row[0],['props'])-count(b.row[0],['props'])||a.n*b.d-b.n*a.d;
+      rankedRows.sort((a,b)=>compare(a,b)||a.row[0]-b.row[0]);
+      let previous=null,rank=0;for(let i=0;i<rankedRows.length;i++){const r=rankedRows[i];if(!previous||compare(r,previous)!==0)rank=i+1;r.rank=rank;previous=r;}return rankedRows;
     }
     return {N,count,metric,ranked,signatures:keys};
   }

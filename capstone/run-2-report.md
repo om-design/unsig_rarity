@@ -2,7 +2,7 @@
 
 Date: October 23, 2026 (America/New_York).
 Public site: https://om-design.github.io/unsig_rarity/
-Status: source committed; public deployment and final browser verification pending.
+Status: publicly deployed and verified. Final source commit: 9eefd01a9197a271a9f10bc0a6316858837ce322. GitHub Actions workflow 40054307037 succeeded.
 
 ## Approved changes and meaning
 
@@ -32,7 +32,7 @@ The endpoint was found in pool.pm's current public application code, /assets/ind
 - Responsive: 1440/375/320px layouts have no document overflow after fixing decorative-edge overflow observed during testing. Each checkbox measured exactly 18px below its card and horizontally centered within 0.004px. Mobile cards stack, with 14px descriptions and readable parameter text. Unchecked cards retain full-opacity text and show explicit exclusion status.
 - Existing digit-only number entry and leading-zero behavior retained. Unknown/zero handling retained. Full formal accessibility/screen-reader certification is not claimed.
 
-Evidence files: ordered-model-verification.json, ordered-browser-scoring.json, wallet-browser-checks.json, layout-checks.json, values-ranking.csv, pass-two-1440.jpg, pass-two-375.jpg, pass-two-320.jpg. Public verification will be recorded separately.
+Evidence files: ordered-model-verification.json, ordered-browser-scoring.json, wallet-browser-checks.json, layout-checks.json, values-ranking.csv, pass-two-1440.jpg, pass-two-375.jpg, pass-two-320.jpg. Public scoring verification: all 110 checks passed at the initial Run 2 deployment. After the ranking-only hierarchy correction, all 93,693 rank positions passed independent checks and the public wallet lookup was rechecked: #00236 is rank 1. Numerical facet and total calculations did not change.
 
 ## Comparison with Run 1
 
@@ -56,3 +56,7 @@ User clarified that #00236 should lead their wallet and confirmed: the rarest fi
 Verified wallet order now begins #00236 (rank 1), then all eight three-property holdings, then six-, four-, and five-property groups in their actual scarcity order. All 93,693 collection/wallet rank positions and tie ranks were independently verified. Facet percentages still describe their explicitly labeled comparison groups and are not a combined hierarchical score.
 
 Original pass-two source at c1f09effcf8171828f3e371ca08268ce25abbc3d and its evidence remain in Git history and the earlier source snapshot. This correction is part of Run 2, not a newly invented third full run.
+
+## Property-count order source check
+
+Every original CSV row was recounted and compared with the merged CSV and both packaged property-count and property-array-length fields. No disagreements. Counts: 1→15, 2→246, 3→2,164, 4→9,553, 5→14,575, 6→4,565. Therefore the eligible rarity order is 1,2,3,6,4,5; zero is separate and excluded. This agrees with https://unsig.info/buying-guide/. The user's suggested 4-before-6 order was checked and not silently applied; the earlier conversational agreement with it was corrected.

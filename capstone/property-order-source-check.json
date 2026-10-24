@@ -1,0 +1,25 @@
+{
+  "source_sha256": "9f85b0c689f4cec610639524faa17e9fd434c20265bb488f262d21dd7e4776eb",
+  "rows": 31119,
+  "counts": {
+    "0": 1,
+    "1": 15,
+    "2": 246,
+    "3": 2164,
+    "4": 9553,
+    "5": 14575,
+    "6": 4565
+  },
+  "all_sources_agree": true,
+  "row_mismatches": [],
+  "eligible_order": [
+    1,
+    2,
+    3,
+    6,
+    4,
+    5
+  ],
+  "zero_excluded": true,
+  "reference": "https://unsig.info/buying-guide/"
+}

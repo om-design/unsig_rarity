@@ -151,8 +151,21 @@
     320
   ],
   "checkbox_gap_px": 18,
-  "published": false,
+  "published": true,
   "hierarchical_ranking_verified_positions": 93693,
   "hierarchical_wallet_first": "00236",
-  "ranking_priority": "property-count population first, then within-group Values; Colors separate"
+  "ranking_priority": "property-count population first, then within-group Values; Colors separate",
+  "public_url": "https://om-design.github.io/unsig_rarity/",
+  "deployed_commit": "9eefd01a9197a271a9f10bc0a6316858837ce322",
+  "deployment_workflow": 40054307037,
+  "public_scoring_checks_passed": 110,
+  "public_wallet_first": "00236",
+  "eligible_property_order": [
+    1,
+    2,
+    3,
+    6,
+    4,
+    5
+  ]
 }

@@ -15,3 +15,7 @@ assert(eligible.every(r=>m.count(r[0],facets)===1));
 console.log(`${checks} independently counted sample checks; full ranking/tie/zero/unique-combination checks passed.`);
 
 const order=m.ranked('values').map(x=>x.row[2]);assert(order.lastIndexOf(3)<order.indexOf(5));
+const all=m.overallRanked();assert.strictEqual(all.length,31119);assert.strictEqual(all[0].row[0],0);assert.strictEqual(all[0].score,100);
+for(let i=1;i<all.length;i++){assert(all[i].score<100);assert(all[i-1].score>=all[i].score);assert.strictEqual(all[i].score,Number((100*(31119-all[i].globalRank)/31118).toFixed(4)));}
+const mini=m.overallRanked(0,new Set([0,236]));assert.strictEqual(mini[0].score,100);assert.strictEqual(mini[1].score,m.overall(236).score);assert.strictEqual(m.overall(236).globalRank,17);
+assert.strictEqual(m.overallRanked(-1).length,1);console.log('Overall score, origin, scale, filter and scope-invariance checks passed.');

@@ -20,7 +20,18 @@
       rankedRows.sort((a,b)=>compare(a,b)||a.row[0]-b.row[0]);
       let previous=null,rank=0;for(let i=0;i<rankedRows.length;i++){const r=rankedRows[i];if(!previous||compare(r,previous)!==0)rank=i+1;r.rank=rank;previous=r;}return rankedRows;
     }
-    return {N,count,metric,ranked,signatures:keys};
+    // Compare separate frequencies in priority order. Never count full configurations.
+    const overallCompare=(a,b)=>count(a[0],['props'])-count(b[0],['props'])||
+      count(a[0],['values'])-count(b[0],['values'])||count(a[0],['colors'])-count(b[0],['colors']);
+    const ordered=[...rows].sort((a,b)=>overallCompare(a,b)||a[0]-b[0]);
+    const allScores=new Map([[0,{row:records.find(r=>r[0]===0),globalRank:1,score:100}]]);
+    let previous=null,globalRank=1;
+    ordered.forEach((row,i)=>{if(!previous||overallCompare(row,previous)!==0)globalRank=i+2;allScores.set(row[0],{row,globalRank,score:percent(N+1-globalRank,N)});previous=row;});
+    function overallRanked(filter=0,ids=null){
+      const result=[...allScores.values()].filter(x=>x.row&&(filter===-1?x.row[0]===0:(!filter||x.row[2]===filter))&&(!ids||ids.has(x.row[0])));
+      let prior=null,rank=0;return result.map((x,i)=>{if(prior!==x.globalRank)rank=i+1;prior=x.globalRank;return {...x,rank};});
+    }
+    return {N,count,metric,ranked,signatures:keys,overall:id=>allScores.get(id),overallRanked};
   }
   const api={create,signatures,percent};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.UnsigRarity=api;

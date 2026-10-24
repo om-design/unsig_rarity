@@ -1,0 +1,23 @@
+{
+  "records_verified": 31119,
+  "all_pass": true,
+  "origin": [
+    0,
+    1,
+    100.0
+  ],
+  "wallet_first": [
+    236,
+    17,
+    99.9486
+  ],
+  "distinct_score_groups": 549,
+  "last": [
+    23760,
+    31116,
+    0.0096
+  ],
+  "rule": "Props count frequency, then separate ordered Values frequency, then separate ordered Colors frequency; zero first",
+  "formula": "100*(31119-competition_rank)/31118",
+  "zero_in_frequency_counts": false
+}

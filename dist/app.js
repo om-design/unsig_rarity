@@ -42,7 +42,7 @@
   function matching(selected) { return model.count(current[0],selected); }
 
   function total() {
-    for(const select of selects)select.closest('.facet-column').querySelector('.selection-state').textContent=select.checked?'Included in total':'Excluded from total';
+    for(const select of selects)select.closest('.facet-column').querySelector('.selection-state').textContent=select.checked?'Included in frequency':'Excluded from frequency';
     if(!current || current[0]===0) return;
     const chosen=selects.filter(el=>el.checked).map(el=>el.dataset.select);
     $('selection-summary').textContent=`${chosen.length} FACET${chosen.length===1?'':'S'} SELECTED`;
@@ -65,7 +65,7 @@
     const canvas=$('artwork'), ctx=canvas.getContext('2d');
     const dim=canvas.width, range=4294967293, modulus=4294967296;
     const image=ctx.createImageData(dim,dim);
-    if(row[0]===0) { canvas.setAttribute('aria-label','unsig #00000: the special zero-property origin, excluded from rarity');ctx.fillStyle='#01060d';ctx.fillRect(0,0,dim,dim);return; }
+    if(row[0]===0) { canvas.setAttribute('aria-label','unsig #00000: the special zero-property origin, ranked first overall');ctx.fillStyle='#01060d';ctx.fillRect(0,0,dim,dim);return; }
     const mean=(dim-1)/2,std=dim/6;
     const normal=new Float64Array(dim),cdf=new Float64Array(dim);let sum=0;
     for(let x=0;x<dim;x++) { normal[x]=Math.trunc(Math.PI*std*Math.exp(-0.5*((x-mean)/std)**2));sum+=normal[x];cdf[x]=sum; }
@@ -96,6 +96,10 @@
     $('original-link').href='https://www.unsigs.com/nft/'+code(id);
     $('object-geometry').textContent=current[1];
     const zero=id===0;
+    const overall=model.overall(id);
+    $('overall-score').textContent=overall.score.toFixed(4);
+    $('overall-rank').textContent=`Collection rank #${integer(overall.globalRank)} of 31,119${id===0?' · special origin':''}`;
+    $('selected-details').hidden=zero;
     $('facet-grid').hidden=zero;
     document.querySelector('.facet-intro').hidden=zero;
     $('total-block').hidden=zero;
@@ -104,7 +108,7 @@
     $('provenance-note').hidden=true;
     document.querySelector('.collection-note').hidden=zero;
     document.querySelector('.art-caption>span').textContent=zero?'THE SPECIAL ORIGIN':'PARAMETER-RENDERED PREVIEW';
-    document.querySelector('.art-note').textContent=zero?'The algorithm-bearing origin is excluded from rarity calculations.':'A local reconstruction from the recorded properties. Preview differences do not affect rarity.';
+    document.querySelector('.art-note').textContent=zero?'The algorithm-bearing origin is excluded from frequency counts and ranked first overall.':'A local reconstruction from the recorded properties. Preview differences do not affect rarity.';
     if(!zero) {
       $('props-value').textContent=current[2];
       $('values-value').textContent=current[2]+' ordered';
@@ -128,7 +132,7 @@
     renderPreview(current);
     $('search-message').classList.remove('error');
     $('unsig-number').removeAttribute('aria-invalid');
-    $('search-message').textContent=zero?'#00000 is excluded from rarity calculations.':`Showing unsig #${code(id)}.`;
+    $('search-message').textContent=zero?'#00000 is the top-ranked origin; excluded from frequency calculations.':`Showing unsig #${code(id)}.`;
     document.title=`unsig #${code(id)} — Rarity Observatory`;
     if(updateURL) { const url=new URL(location.href);url.searchParams.set('unsig',code(id));history.replaceState(null,'',url); }
   }
@@ -156,29 +160,29 @@
   const pageSize=30, policy='0e14267a8020229adc0184dd25fa3174c3f7d6caadcb4425c70e7c04';
   function renderRanking(){
     if(!model)return;
-    const basis=$('ranking-basis').value, filter=Number($('ranking-props').value), scope=$('ranking-scope').value;
-    rankingRows=model.ranked(basis,filter,scope==='wallet'?walletIDs:null);
+    const filter=Number($('ranking-props').value), scope=$('ranking-scope').value;
+    rankingRows=model.overallRanked(filter,scope==='wallet'?walletIDs:null);
     const pages=Math.max(1,Math.ceil(rankingRows.length/pageSize));page=Math.min(page,pages-1);
     const body=$('ranking-body');body.replaceChildren();
     for(const item of rankingRows.slice(page*pageSize,(page+1)*pageSize)){
       const tr=document.createElement('tr');
-      for(const value of [item.rank,code(item.row[0]),item.row[2],`${integer(item.n)} / ${integer(item.d)}`,percentage(item.n,item.d),rarity(item.n,item.d)]){
+      for(const value of [item.rank,code(item.row[0]),item.row[2],item.score.toFixed(4),integer(item.globalRank)]){
         const td=document.createElement('td');
         if(tr.children.length===1){const button=document.createElement('button');button.type='button';button.textContent='#'+value;button.addEventListener('click',()=>{show(item.row[0]);$('lookup').scrollIntoView({behavior:'auto'});});td.append(button);}else td.textContent=String(value);
         tr.append(td);
       }body.append(tr);
     }
-    $('ranking-caption').textContent=$('ranking-basis').selectedOptions[0].textContent+' — '+(scope==='wallet'?'loaded wallet':'collection');
-    $('ranking-status').textContent=`${integer(rankingRows.length)} unsigs · smaller share is rarer · ties share a rank.`;
+    $('ranking-caption').textContent='Overall rarity score — '+(scope==='wallet'?'loaded wallet':'collection');
+    $('ranking-status').textContent=`${integer(rankingRows.length)} unsigs · higher score is rarer · ties share a rank and score.`;
     $('ranking-page').textContent=`Page ${page+1} of ${pages}`;
     $('ranking-previous').disabled=page===0;$('ranking-next').disabled=page>=pages-1;
   }
-  for(const id of ['ranking-basis','ranking-props','ranking-scope'])$(id).addEventListener('change',()=>{page=0;renderRanking();});
+  for(const id of ['ranking-props','ranking-scope'])$(id).addEventListener('change',()=>{page=0;renderRanking();});
   $('ranking-previous').addEventListener('click',()=>{page--;renderRanking();});
   $('ranking-next').addEventListener('click',()=>{page++;renderRanking();});
   $('download-ranking').addEventListener('click',()=>{
-    const rows=[['rank','unsig','props','matches','comparison_population','share_percent','rarity_percent','basis'],...rankingRows.map(r=>[r.rank,code(r.row[0]),r.row[2],r.n,r.d,window.UnsigRarity.percent(r.n,r.d).toFixed(4),window.UnsigRarity.percent(r.d-r.n,r.d).toFixed(4),$('ranking-basis').value])];
-    const blob=new Blob([rows.map(r=>r.join(',')).join('\n')],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='unsig-rarity-'+$('ranking-basis').value+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    const rows=[['rank_in_view','unsig','props','overall_score','collection_rank'],...rankingRows.map(r=>[r.rank,code(r.row[0]),r.row[2],r.score.toFixed(4),r.globalRank])];
+    const blob=new Blob([rows.map(r=>r.join(',')).join('\n')],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='unsig-overall-ranking.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
   function bech32(text){
     if(text!==text.toLowerCase())return false;
@@ -206,11 +210,11 @@
         const url=new URL('https://pool.pm/api/assets/'+subject+'/'+policy);if(cursor!==undefined)url.searchParams.set('cursor',String(cursor));
         const response=await fetch(url,{signal:AbortSignal.timeout(20000)});if(!response.ok)throw Error('pool.pm lookup is unavailable ('+response.status+'). Please retry.');
         const data=await response.json();if(!Array.isArray(data.assets)||typeof data.has_more!=='boolean')throw Error('pool.pm returned an unexpected response. Please retry later.');
-        for(const asset of data.assets){if(asset.policy!==policy)continue;const match=/^unsig(\d{5})$/.exec(asset.name||'');if(!match||Number(match[1])>31118){unknown++;continue;}const id=Number(match[1]);if(id===0)zero=true;else ids.add(id);}
+        for(const asset of data.assets){if(asset.policy!==policy)continue;const match=/^unsig(\d{5})$/.exec(asset.name||'');if(!match||Number(match[1])>31118){unknown++;continue;}const id=Number(match[1]);if(id===0)zero=true;ids.add(id);}
         more=data.has_more;if(more){if(data.cursor==null||seen.has(String(data.cursor)))throw Error('The holdings list could not be completed. Please retry.');cursor=data.cursor;seen.add(String(cursor));}
       }
       walletIDs=ids;$('ranking-scope').querySelector('[value="wallet"]').disabled=false;$('ranking-scope').value='wallet';page=0;renderRanking();
-      $('wallet-status').textContent=(ids.size?`${ids.size} eligible unsigs found. Their scores appear in the ranking above.`:'No unsigned_algorithms found in this address view.')+(zero?' #00000 is present but excluded from scoring.':'')+(unknown?` ${unknown} unrecognized assets were not scored.`:'')+' Holdings checked '+new Date().toLocaleString()+'.';
+      $('wallet-status').textContent=(ids.size?`${ids.size} unsigs found. Their overall scores appear in the ranking above.`:'No unsigned_algorithms found in this address view.')+(zero?' #00000 is specially ranked first and excluded from frequency counts.':'')+(unknown?` ${unknown} unrecognized assets were not scored.`:'')+' Holdings checked '+new Date().toLocaleString()+'.';
     }catch(e){$('wallet-status').textContent=(e.name==='TimeoutError'?'pool.pm took too long. Please retry.':e.message||'Lookup failed. Please retry.')+(walletIDs?' The previous completed wallet list remains displayed.':'');}
     finally{$('wallet-button').disabled=false;}
   });

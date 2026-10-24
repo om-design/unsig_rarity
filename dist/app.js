@@ -159,7 +159,7 @@
   fetch('data.json').then(response=>{if(!response.ok)throw new Error('Collection unavailable');return response.json();}).then(data=>{
     if(data.population!==31118 || data.records.length!==31119 || data.records.some((r,i)=>r[0]!==i))throw new Error('Invalid collection data');
     collection=data;eligible=data.records.filter(row=>row[0]!==0);indexCollection();
-    $('search-button').disabled=false;$('random-button').disabled=false;
+    numberInput.disabled=false;$('search-button').disabled=false;$('random-button').disabled=false;
     const requested=new URL(location.href).searchParams.get('unsig');
     const id=requested===null?52:parseID(requested);
     show(id===null?52:id,false);
